@@ -64,6 +64,29 @@ a <- murders$abb
 class(a)
 [1] "character"
 
+#numeric vs integer class
+class(seq(1, 10, 0.5))
+numeric
+#using L it specify that the value is an integer
+class(3L)
+integer
+class(1)
+[1] "numeric"
+class(1L)
+[1] "integer"
+
+#COERCION
+#The values in a vector are treated as the same type, R use coercion to set the same type of value when it's possible
+x <- c(1, 3, 5,"a")
+class(x)
+character
+#It's possible to force that R treat some values as one desire, but some times is not possible and return NA
+x <- c(1,3,5,"a")
+x <- as.numeric(x)
+Warning message:
+NAs introduced by coercion
+
+
 #ACCESS TO A SOME VALUES OF A VARIABLE
 # We extract the population like this:
 p <- murders$population
